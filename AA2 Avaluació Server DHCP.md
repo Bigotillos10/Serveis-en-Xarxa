@@ -65,6 +65,10 @@ entre client i servidor seguint aquest ordre:
  - Canvieu al client la xarxa de NAT a Xarxa Interna
  - Forceu un refresc de IP:
 
+- Eina gràfica a Linux 
+
+- Indiqueu quins dels paquets que has obtingut al Wireshark son broadcast i quins son unicast, tant IPcom MAC.
+
 ---
 
 ## 5. Coses X
