@@ -3,7 +3,7 @@
 **Alumne:** Biel Clavé Navarro  
 **Mòdul:** 0227 Serveis en Xarxa  
 **Curs:** CFGM SMX2  
-**Data:** 17/09/2026 - 24/09/2026  
+**Data:** 2/10/2026 - 8/10/2026  
 
 ---
 
@@ -11,7 +11,7 @@
 
 1. [Objectiu](#1-objectiu)
 
-2. [Creació X](#2-creació-x)
+2. [Part 1](#2-Part-1)
 
 3. [Instal·lació i configuració](#3-instal·lació-i-configuració)
 
@@ -34,11 +34,20 @@
 
 ---
 
-## 2. Creació X
+## 2. Part 1
 
-*Explica aquí el procés de creació...*
+- Configura correctament el servidor Ubuntu Server i instal.la el servei de kea.
 
-**TOTAL:** *Afegix el total o el resum aquí*
+- Edita l'arxiu de configuracio de kea per desactivar eldhcpv6 i el DDNS.
+
+- Edita l'arxiu /etc/kea/kea-dhcp4.conf per tal de tenir un
+servidor DHCP que configuri correctament un client amb
+els següents paràmetres:
+- Pool 192.169.x.10 fins 192.169.x.50
+- Porta d'enllaç 192.169.x.254
+- DNS 8.8.8.8
+
+- Un cop configurat, reinicia el servei.
 
 ---
 
