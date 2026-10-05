@@ -13,11 +13,9 @@
 
 2. [Part 1](#2-Part-1)
 
-3. [Instal·lació i configuració](#3-instal·lació-i-configuració)
+3. [Part 2](#3-Part-2)
 
-   - [3.1 Altres Configuracions](#31-altres-configuracions)
-
-4. [Comprovacions finals](#4-comprovacions-finals)
+4. [Part 3](#4-Part-3)
 
 5. [Coses X](#5-coses-x)
 
@@ -43,27 +41,29 @@
 - Edita l'arxiu /etc/kea/kea-dhcp4.conf per tal de tenir un
 servidor DHCP que configuri correctament un client amb
 els següents paràmetres:
- Pool 192.169.x.10 fins 192.169.x.50
- Porta d'enllaç 192.169.x.254
- DNS 8.8.8.8
+ *Pool 192.169.x.10 fins 192.169.x.50*
+ *Porta d'enllaç 192.169.x.254*
+ *DNS 8.8.8.8*
 
 - Un cop configurat, reinicia el servei.
 
 ---
 
-## 3. Instal·lació i configuració
+## 3. Part 2
 
-*Passos d'instal·lació i configuració...*
+- L'equip Zorin inicialment el posem en NAT.
 
-### 3.1 Altres Configuracions
-
-*Altres opcions o detalls de configuració...*
+- Instal-lem Wireshark sudo apt install wireshark i Per obrir-lo, des del terminal sudo wireshark
 
 ---
 
-## 4. Comprovacions finals
+## 4. Part 3
 
-*Captures de pantalla, comandes de comprovació, etc.*
+- Utilitzant Wireshark feu una captura de la negociació
+entre client i servidor seguint aquest ordre:
+ - Inicieu captura de transit amb Wireshark
+ - Canvieu al client la xarxa de NAT a Xarxa Interna
+ - Forceu un refresc de IP:
 
 ---
 
