@@ -17,7 +17,7 @@
 
 4. [Part 3](#4-Part-3)
 
-5. [Coses X](#5-coses-x)
+5. [Part 4](#5-Part-4)
 
 7. [Incidències](#7-incidències)
 
@@ -71,9 +71,13 @@ entre client i servidor seguint aquest ordre:
 
 ---
 
-## 5. Coses X
+## 5. Part 4
 
-*Detalls o apartats addicionals de l'activitat...*
+- Comproveu que el client es configura correctament (feu una captura de prova).
+
+- Observa les assignacions /var/lib/kea/dhcp4.leases
+
+- Definiu una reserva amb l'adreça MAC del client i IP 192.169.x.55 i comproveu el seu funcionament (caldrà que demaneu renovar l'adreça del client).
 
 ---
 
