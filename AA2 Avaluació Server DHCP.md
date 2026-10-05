@@ -43,9 +43,9 @@
 - Edita l'arxiu /etc/kea/kea-dhcp4.conf per tal de tenir un
 servidor DHCP que configuri correctament un client amb
 els següents paràmetres:
-- Pool 192.169.x.10 fins 192.169.x.50
-- Porta d'enllaç 192.169.x.254
-- DNS 8.8.8.8
+ Pool 192.169.x.10 fins 192.169.x.50
+ Porta d'enllaç 192.169.x.254
+ DNS 8.8.8.8
 
 - Un cop configurat, reinicia el servei.
 
