@@ -61,9 +61,9 @@ els següents paràmetres:
 
 - Utilitzant Wireshark feu una captura de la negociació
 entre client i servidor seguint aquest ordre:
- - Inicieu captura de transit amb Wireshark
- - Canvieu al client la xarxa de NAT a Xarxa Interna
- - Forceu un refresc de IP:
+- Inicieu captura de transit amb Wireshark
+- Canvieu al client la xarxa de NAT a Xarxa Interna
+- Forceu un refresc de IP:
 
 - Eina gràfica a Linux 
 
