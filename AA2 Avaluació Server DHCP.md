@@ -61,7 +61,9 @@ els següents paràmetres:
 
 - Instal-lem Wireshark sudo apt install wireshark i Per obrir-lo, des del terminal sudo wireshark
 
-![Wireshark instalat]()
+![Wireshark instalant](img/Wireshark%20instalant.png)
+
+![Wireshark instalat](img/Wireshark%20instalat.png)
 
 ---
 
@@ -70,12 +72,24 @@ els següents paràmetres:
 - Utilitzant Wireshark feu una captura de la negociació
 entre client i servidor seguint aquest ordre:
 - Inicieu captura de transit amb Wireshark
+
+![Wireshark transit]()
+
 - Canvieu al client la xarxa de NAT a Xarxa Interna
+
+![Wireshark xarxa interna]()
+
 - Forceu un refresc de IP:
+
+![refresc ip]()
 
 - Eina gràfica a Linux 
 
+![eina grafica]()
+
 - Indiqueu quins dels paquets que has obtingut al Wireshark son broadcast i quins son unicast, tant IPcom MAC.
+
+![Paquets obtinguts wireshark quins broadcast i quins son unicast]()
 
 ---
 
@@ -83,9 +97,15 @@ entre client i servidor seguint aquest ordre:
 
 - Comproveu que el client es configura correctament (feu una captura de prova).
 
+![comprova que el client es configura correctament]()
+
 - Observa les assignacions /var/lib/kea/dhcp4.leases
 
+![Observa les assignacions /var/lib/kea/dhcp4.leases]()
+
 - Definiu una reserva amb l'adreça MAC del client i IP 192.169.x.55 i comproveu el seu funcionament (caldrà que demaneu renovar l'adreça del client).
+
+![Definiu una reserva amb l'adreça MAC del client i IP 192.169.x.55 i comproveu el seu funcionament]()
 
 ---
 
