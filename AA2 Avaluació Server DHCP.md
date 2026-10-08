@@ -57,7 +57,11 @@ els següents paràmetres:
 
 - L'equip Zorin inicialment el posem en NAT.
 
+![zorin en nat](img/zorin%20nat.png)
+
 - Instal-lem Wireshark sudo apt install wireshark i Per obrir-lo, des del terminal sudo wireshark
+
+![Wireshark instalat]()
 
 ---
 
