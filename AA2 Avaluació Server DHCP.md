@@ -73,23 +73,23 @@ els següents paràmetres:
 entre client i servidor seguint aquest ordre:
 - Inicieu captura de transit amb Wireshark
 
-![Wireshark transit]()
+![Wireshark transit](img/Wireshark%20transit.png)
 
 - Canvieu al client la xarxa de NAT a Xarxa Interna
 
-![Wireshark xarxa interna]()
+![Wireshark xarxa interna](img/Wireshark%20xarxa%20interna.png)
 
-- Forceu un refresc de IP:
+- Forceu un refresc de IP
 
-![refresc ip]()
+- Eina gràfica a Linux
 
-- Eina gràfica a Linux 
-
-![eina grafica]()
+![refresc ip](img/refresc%20ip.png)
 
 - Indiqueu quins dels paquets que has obtingut al Wireshark son broadcast i quins son unicast, tant IPcom MAC.
 
-![Paquets obtinguts wireshark quins broadcast i quins son unicast]()
+![Paquets obtinguts wireshark quins broadcast i quins son unicast](img/Paquets%20obtinguts%20wireshark%20quins%20broadcast%20i%20quins%20son%20unicast.png)
+
+-Els paquets broadcast es el 127.0.0.1/8 i els unicast son les altres ips
 
 ---
 
