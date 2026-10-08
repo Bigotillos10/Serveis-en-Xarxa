@@ -108,4 +108,4 @@ entre client i servidor seguint aquest ordre:
 
 ## 7. Incidències
 
-- En la part 3 hem perdut la xarxa i no ens deixaba conectar a la red.
+- En la part 3 hem perdut la xarxa i no ens deixaba conectar a la xarxa, pero al final hem pogut reiniciar i amb varies convinacions tornar a conectarla.
