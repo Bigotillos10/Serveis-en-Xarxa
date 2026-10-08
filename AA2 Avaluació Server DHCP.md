@@ -21,9 +21,6 @@
 
 7. [Incidències](#7-incidències)
 
-8. [Conclusions](#8-conclusions)
-
-
 ---
 
 ## 1. Objectiu
@@ -101,7 +98,7 @@ entre client i servidor seguint aquest ordre:
 
 - Observa les assignacions /var/lib/kea/dhcp4.leases
 
-![Observa les assignacions /var/lib/kea/dhcp4.leases]()
+![Observa les assignacions /var/lib/kea/dhcp4.leases](img/Observa%20les%20assignacions%20varlibkeadhcp4.leases.png)
 
 - Definiu una reserva amb l'adreça MAC del client i IP 192.169.x.55 i comproveu el seu funcionament (caldrà que demaneu renovar l'adreça del client).
 
@@ -111,28 +108,4 @@ entre client i servidor seguint aquest ordre:
 
 ## 7. Incidències
 
-*Registra si has tingut algun error o problema durant la pràctica i com ho has resolt.*
-
----
-
-## 8. Conclusions
-
-### Quina part us ha resultat més fàcil?
-
-*Escriu la teva resposta aquí...*
-
-### Quina part us ha costat més?
-
-*Escriu la teva resposta aquí...*
-
-### Què heu necessitat recuperar del curs anterior?
-
-*Escriu la teva resposta aquí...*
-
-### Què considereu que hauríeu de repassar?
-
-*Escriu la teva resposta aquí...*
-
-### Podríeu repetir el procés amb més autonomia?
-
-*Escriu la teva resposta aquí...*
+- En la part 3 hem perdut la xarxa i no ens deixaba conectar a la red.
