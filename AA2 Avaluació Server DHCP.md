@@ -45,6 +45,10 @@ els següents paràmetres:
  *Porta d'enllaç 192.169.x.254*
  *DNS 8.8.8.8*
 
+![Captura del nano](img/Captura%20de%20pantalla%202026-10-08%20171611.png)
+
+![Captura de que tot funciona](img/Captura%20de%20pantalla%202026-10-08%20170102.png)
+
 - Un cop configurat, reinicia el servei.
 
 ---
