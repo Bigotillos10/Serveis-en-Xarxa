@@ -1,34 +1,18 @@
-# AA2 – Avaluació Anàlisi Kea DHCP
+# AA2 – Avaluació: Anàlisi Kea DHCP
 
 **Mòdul:** M0227 – Serveis de Xarxa  
-**Alumne:** Nom i cognoms  
+**Alumne:** Biel Clave 
 **Curs:** SMX2  
-**Empresa de l'escenari:** TechMataró SL  
-**Data:**  
-
----
-
-# Índex
-
-1. Introducció
-2. Bloc 1 – Fonaments del protocol i anàlisi de tràfic
-3. Bloc 2 – Configuració del servidor Kea DHCP
-4. Bloc 3 – Assignació estàtica i reserves MAC
-5. Bloc 4 – Comprovació, diagnòstic i resolució d'incidències
-6. Bloc 5 – Mapa conceptual del servei DHCP
-7. Conclusió
+**Empresa:** TechMataró SL  
+**Data:**  04/11/2026
 
 ---
 
 # 1. Introducció
 
-## 1.1 Objectiu de l'activitat
+En aquesta activitat es treballarà la instal·lació, configuració i gestió del servei Kea DHCP4 en un sistema Linux. L'objectiu és aprendre a configurar l'adreçament IP dinàmic, crear reserves d'adreces IP i comprovar el funcionament del servidor mitjançant diferents eines de diagnòstic.
 
-En aquesta activitat es treballarà el desplegament, la configuració i l'anàlisi del servei Kea DHCP4 en un entorn Linux.
-
-## 1.2 Escenari de treball
-
-L'empresa TechMataró SL necessita configurar un servidor DHCP centralitzat per gestionar les adreces IP dels dispositius de la seva xarxa local.
+L'activitat es desenvolupa en l'escenari d'una empresa anomenada TechMataró SL, que necessita un servidor DHCP per gestionar les adreces IP dels seus dispositius.
 
 ---
 
@@ -36,286 +20,237 @@ L'empresa TechMataró SL necessita configurar un servidor DHCP centralitzat per 
 
 ## 2.1 Procés de negociació DHCP (DORA)
 
-### Pas 1 – Discover
-- Funció del missatge:
-- Tipus de comunicació:
-- Explicació:
+El procés DORA és el procediment que segueix un client per obtenir una adreça IP automàticament.
 
-### Pas 2 – Offer
-- Funció del missatge:
-- Tipus de comunicació:
-- Explicació:
+- **Discover:** el client busca un servidor DHCP disponible.
+- **Offer:** el servidor ofereix una adreça IP al client.
+- **Request:** el client sol·licita l'adreça IP que vol utilitzar.
+- **Acknowledge:** el servidor confirma l'assignació de l'adreça IP.
 
-### Pas 3 – Request
-- Funció del missatge:
-- Tipus de comunicació:
-- Explicació:
+### Broadcast i Unicast
 
-### Pas 4 – Acknowledge
-- Funció del missatge:
-- Tipus de comunicació:
-- Explicació:
+Indicar quines fases del procés DORA utilitzen Broadcast i quines Unicast en una xarxa local sense DHCP Relay.
 
-## 2.2 Captura i capçaleres dels paquets
+**Resposta:**
 
-### Pas 1 – Ports UDP
+## 2.2 Ports i capçaleres DHCP
+
+DHCP utilitza el protocol UDP per comunicar el client amb el servidor.
+
 - Port UDP del client:
 - Port UDP del servidor:
-- Explicació:
 
-### Pas 2 – Identificació del client
-- Camp DHCP que identifica la targeta de xarxa:
-- Explicació:
+### Identificació del client
 
-### Pas 3 – Opcions DHCP
+Indicar quin camp de la capçalera DHCP permet identificar la targeta de xarxa del client.
 
-| Opció DHCP | Número o nom | Funció |
-|---|---|---|
-| Router | | |
-| DNS | | |
-| Domain Name | | |
+**Resposta:**
+
+## 2.3 Opcions DHCP
+
+Completar la informació de les opcions DHCP utilitzades per transmetre els paràmetres de xarxa.
+
+| Opció | Número |
+|---|---|
+| Router | |
+| DNS | |
+| Domain Name | |
 
 ### Evidència pràctica
 
-**Captura de Wireshark o tcpdump:**
+Afegir una captura de Wireshark o tcpdump on es pugui observar el tràfic DHCP.
 
-![Captura de pantalla](captura_bloc1.png)
+**Captura:**
 
 ---
 
 # 3. Bloc 2 – Configuració del servidor Kea DHCP
 
-## 3.1 Configuració de la interfície de xarxa
+## 3.1 Configuració de la interfície i base de dades
 
-### Pas 1
-Identificar la interfície de xarxa que utilitzarà el servidor.
+El servidor Kea DHCP4 s'ha de configurar perquè escolti les peticions DHCP a través de la interfície de xarxa `eth0`.
 
-- Interfície:
-- Comanda utilitzada:
-- Resultat:
+També s'ha d'utilitzar el sistema d'emmagatzematge `memfile` per guardar les cessions DHCP, amb persistència activada.
 
-### Pas 2
-Configurar la interfície `eth0` al fitxer de configuració.
+## 3.2 Paràmetres globals i temps de cessió
 
-## 3.2 Configuració de la base de dades
+Configurar els següents paràmetres:
 
-### Pas 1
-Configurar el sistema d'emmagatzematge de les cessions DHCP.
-
-- Model de base de dades:
-- Persistència:
-
-## 3.3 Configuració dels paràmetres globals
-
-| Paràmetre | Valor requerit | Configurat |
-|---|---|---|
-| valid-lifetime | 7200 segons | |
-| renew-timer | 3600 segons | |
-
-## 3.4 Configuració de la subxarxa
-
-### Pas 1 – Definir la subxarxa
-- Xarxa:
-- Màscara:
-
-### Pas 2 – Definir el pool dinàmic
-- IP inicial:
-- IP final:
-
-## 3.5 Configuració de les opcions de xarxa
-
-| Opció | Valor |
+| Paràmetre | Valor |
 |---|---|
-| Router | |
-| DNS primari | |
-| DNS secundari | |
-| Domini local | |
+| `valid-lifetime` | 7200 segons |
+| `renew-timer` | 3600 segons |
 
-## 3.6 Fitxer de configuració
+## 3.3 Configuració de la subxarxa i pool
 
-**Nom del fitxer:** `kea-dhcp4.conf`
+La xarxa de l'empresa utilitza una subxarxa `192.168.x.0/24`.
 
-### Configuració JSON
+El servidor ha de permetre l'assignació dinàmica d'adreces IP dins del següent rang:
+
+- **Subxarxa:** `192.168.x.0/24`
+- **Pool dinàmic:** `192.168.x.50` – `192.168.x.200`
+
+## 3.4 Opcions de xarxa
+
+Configurar les opcions necessàries perquè els clients rebin correctament els paràmetres de xarxa.
+
+| Paràmetre | Valor |
+|---|---|
+| Router | `192.168.x.1` |
+| DNS primari | `1.1.1.1` |
+| DNS secundari | `8.8.8.8` |
+| Domini local | `oficina.local` |
+
+## 3.5 Fitxer de configuració `kea-dhcp4.conf`
+
+Redactar el fitxer JSON complet amb tots els paràmetres anteriors.
 
 ```json
-// Escriu aquí la configuració del servidor Kea DHCP4
+// Configuració del servidor Kea DHCP4
 ```
 
 ### Evidència pràctica
 
-**Captura del fitxer de configuració:**
+Afegir una captura del fitxer de configuració obert a la terminal o editor.
 
-![Captura de pantalla](captura_bloc2.png)
+**Captura:**
 
 ---
 
-# 4. Bloc 3 – Assignació estàtica i reserves per MAC
+# 4. Bloc 3 – Assignació estàtica i reserves MAC
 
-## 4.1 Configuració de la reserva DHCP
+## 4.1 Configuració de la reserva
 
-### Pas 1 – Identificar el dispositiu
+Per garantir que la impressora de l'oficina sempre rebi la mateixa adreça IP, s'ha de crear una reserva DHCP associada a la seva adreça MAC.
 
-- Dispositiu:
-- Adreça MAC:
-- Adreça IP reservada:
-- Nom de l'equip:
+Els paràmetres de la reserva són:
 
-### Pas 2 – Afegir la reserva
+| Paràmetre | Valor |
+|---|---|
+| `hw-address` | `aa:bb:cc:11:22:33` |
+| Adreça IP | `192.168.x.20` |
+| `hostname` | `impresora-dir` |
 
-Escriure la configuració de la reserva dins de la secció corresponent de `kea-dhcp4.conf`.
+Afegir la configuració de la reserva dins de la secció corresponent de la subxarxa.
 
 ```json
-// Escriu aquí la configuració de la reserva
+// Configuració de la reserva DHCP
 ```
 
 ## 4.2 Validació de la sintaxi
 
-### Pas 1
-Indicar les eines o comandes que permeten comprovar la sintaxi del fitxer JSON.
+Abans d'iniciar el servei, cal comprovar que el fitxer JSON no conté errors de sintaxi ni de configuració.
 
-- Eina o comanda:
-- Funció:
-- Resultat:
+- **Comanda o eina utilitzada:**
+- **Resultat de la validació:**
 
 ### Evidència pràctica
 
-**Captura de la validació de la configuració:**
+Afegir una captura de la terminal on es vegi la validació del fitxer.
 
-![Captura de pantalla](captura_bloc3.png)
+**Captura:**
 
 ---
 
 # 5. Bloc 4 – Comprovació, diagnòstic i resolució d'incidències
 
-## 5.1 Comprovacions al servidor
+## 5.1 Gestió del servei Kea DHCP
 
-### Pas 1 – Consultar l'estat del servei
-- Comanda:
-- Resultat:
-- Explicació:
+Utilitzar les comandes de `systemctl` per gestionar el servei DHCP.
 
-### Pas 2 – Reiniciar el servei
-- Comanda:
-- Resultat:
-
-### Pas 3 – Aturar el servei
-- Comanda:
-- Resultat:
+| Acció | Comanda |
+|---|---|
+| Consultar l'estat | |
+| Reiniciar el servei | |
+| Aturar el servei | |
 
 ## 5.2 Consulta dels registres
 
-### Pas 1
-Indicar les comandes necessàries per consultar els registres de Kea DHCP.
+Els registres permeten consultar les peticions DHCP, detectar errors i comprovar el funcionament del servidor.
 
-- Comanda:
-- Ruta dels registres:
-- Informació que es pot consultar:
+- **Comanda amb `journalctl`:**
+- **Ruta dels registres:**
 
-## 5.3 Fitxer de cessions actives
+## 5.3 Fitxer de cessions DHCP
 
-- Ruta del fitxer:
-- Nom del fitxer:
-- Informació que emmagatzema:
+Quan s'utilitza el sistema `memfile`, Kea guarda les cessions DHCP en un fitxer.
 
-## 5.4 Proves des d'un client Linux
+- **Ruta del fitxer:**
+- **Nom del fitxer:** `kea-leases4.csv`
 
-### Pas 1 – Alliberar l'adreça IP actual
-- Comanda:
-- Resultat:
+## 5.4 Comprovacions des d'un client Linux
 
-### Pas 2 – Sol·licitar una nova adreça IP
-- Comanda:
-- Resultat:
+Utilitzar les comandes necessàries per alliberar l'adreça IP actual, sol·licitar-ne una de nova i comprovar la configuració de xarxa.
 
-### Pas 3 – Comprovar la configuració IP
-- Comanda:
-- Resultat:
+| Acció | Comanda |
+|---|---|
+| Alliberar IP | |
+| Sol·licitar una nova IP | |
+| Comprovar IP | |
 
-## 5.5 Proves des d'un client Windows
+## 5.5 Comprovacions des d'un client Windows
 
-### Pas 1 – Alliberar l'adreça IP
-- Comanda:
-- Resultat:
+Utilitzar les comandes de `ipconfig` per renovar l'adreça IP del client.
 
-### Pas 2 – Sol·licitar una nova adreça IP
-- Comanda:
-- Resultat:
+| Acció | Comanda |
+|---|---|
+| Alliberar IP | |
+| Sol·licitar una nova IP | |
+| Comprovar configuració | |
 
-### Pas 3 – Comprovar la configuració
-- Comanda:
-- Resultat:
+### Evidències pràctiques
 
-## 5.6 Evidències pràctiques
+Afegir les captures reals de les proves efectuades.
 
-### Captura del servidor Linux
-
-![Captura de pantalla](captura_bloc4_linux.png)
-
-### Captura del client Linux
-
-![Captura de pantalla](captura_bloc4_client_linux.png)
-
-### Captura del client Windows
-
-![Captura de pantalla](captura_bloc4_windows.png)
+- Captura del servidor Linux:
+- Captura del client Linux:
+- Captura del client Windows:
 
 ---
 
 # 6. Bloc 5 – Mapa conceptual del servei DHCP
 
-## 6.1 Mapa conceptual
+## 6.1 Disseny del mapa conceptual
 
-En aquest apartat s'inclourà un mapa conceptual que connecti els components principals del servei DHCP i Kea.
+Crear un mapa conceptual que relacioni visualment els principals components del servei DHCP i Kea.
 
-### Conceptes obligatoris
+El mapa ha d'incloure obligatòriament:
 
-- Ports UDP 67 i 68
-- Broadcast i Unicast
-- Discover, Offer, Request i Acknowledge
-- `kea-dhcp4.conf`
-- `interfaces-config`
-- `lease-database`
-- `valid-lifetime`
-- `renew-timer`
-- `subnet4`
-- `pools`
-- `option-data`
-- `reservations`
-- `hw-address`
-- `hostname`
-- `kea-leases4.csv`
-- `kea-dhcp4-server`
-- `journalctl`
-- `tcpdump`
-- Wireshark
-- `ipconfig`
-- `dhclient`
+- **Transport:** UDP 67 i 68, Broadcast i Unicast.
+- **DORA:** Discover, Offer, Request i Acknowledge.
+- **Configuració Kea:** `kea-dhcp4.conf`, `interfaces-config`, `lease-database`, `valid-lifetime`, `renew-timer`, `subnet4`, `pools`, `option-data` i `reservations`.
+- **Identificació:** `hw-address` i `hostname`.
+- **Gestió:** `kea-leases4.csv`, `kea-dhcp4-server` i `journalctl`.
+- **Diagnòstic:** `tcpdump`, Wireshark, `ipconfig` i `dhclient`.
 
-### Imatge del mapa conceptual
+El mapa ha de contenir els conceptes i les seves relacions, sense definicions ni explicacions.
 
-![Mapa conceptual DHCP](mapa_conceptual.png)
+### Mapa conceptual
+
+**Afegir aquí la imatge o esquema del mapa conceptual.**
 
 ---
 
 # 7. Conclusió
 
-En aquesta activitat he treballat el servei Kea DHCP4, la seva configuració i les diferents eines que permeten comprovar el seu funcionament.
+En aquest apartat es farà una breu valoració personal de l'activitat.
 
-**Valoració personal:**
-
-- Què he après?
+- Què he après sobre Kea DHCP?
 - Quina part m'ha resultat més difícil?
-- Per a què em pot servir aquest servei en un entorn professional?
+- Quina utilitat té DHCP en una empresa?
 
 ---
 
-# 8. Evidències i lliurament
+# 8. Lliurament final
 
-- [ ] Configuració del servidor Kea DHCP4.
-- [ ] Captures reals de la terminal amb el meu nom d'usuari visible.
-- [ ] Captura de la validació del JSON.
-- [ ] Captures de les proves amb clients.
-- [ ] Mapa conceptual complet.
+Abans de lliurar el document, comprovar que inclou:
+
+- [ ] Configuració completa del servidor Kea DHCP4.
+- [ ] Configuració de la reserva MAC.
+- [ ] Validació de la sintaxi JSON.
+- [ ] Comandes de comprovació i diagnòstic.
+- [ ] Captures reals amb el nom d'usuari visible.
+- [ ] Mapa conceptual integrat al document.
 - [ ] Document exportat a PDF.
 
-**Nom final del document:** `M0227_RA1_Nom_Cognom.pdf`
+**Nom del document final:** `M0227_RA1_Nom_Cognom.pdf`
