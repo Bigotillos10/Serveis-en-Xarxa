@@ -60,7 +60,7 @@ Completar la informació de les opcions DHCP utilitzades per transmetre els par�
 
 Afegir una captura de Wireshark o tcpdump on es pugui observar el tràfic DHCP.
 
-**Captura:**
+**Captura:** 
 
 ---
 
@@ -253,4 +253,3 @@ Abans de lliurar el document, comprovar que inclou:
 - [ ] Mapa conceptual integrat al document.
 - [ ] Document exportat a PDF.
 
-**Nom del document final:** `M0227_RA1_Nom_Cognom.pdf`
