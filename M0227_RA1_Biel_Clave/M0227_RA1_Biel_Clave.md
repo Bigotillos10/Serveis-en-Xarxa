@@ -222,7 +222,7 @@ El mapa ha de contenir els conceptes i les seves relacions, sense definicions ni
 
 ### Mapa conceptual
 
-**Afegir aquí la imatge o esquema del mapa conceptual.**
+![Mapaconceptual](/M0227_RA1_Biel_Clave/img/mapa%20conceptual.png)
 
 ---
 
