@@ -85,7 +85,7 @@ Configurar les opcions necessàries perquè els clients rebin correctament els p
 
 | Paràmetre | Valor |
 |---|---|
-| Router | `192.168.x.1` |
+| Router | `192.168.1.1` |
 | DNS primari | `1.1.1.1` |
 | DNS secundari | `8.8.8.8` |
 | Domini local | `oficina.local` |
@@ -121,7 +121,7 @@ Els paràmetres de la reserva són:
 | Paràmetre | Valor |
 |---|---|
 | `hw-address` | `aa:bb:cc:11:22:33` |
-| Adreça IP | `192.168.x.20` |
+| Adreça IP | `192.168.1.20` |
 | `hostname` | `impresora-dir` |
 
 Afegir la configuració de la reserva dins de la secció corresponent de la subxarxa.
