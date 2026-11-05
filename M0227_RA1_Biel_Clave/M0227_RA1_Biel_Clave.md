@@ -32,19 +32,23 @@ El procés DORA és el procediment que segueix un client per obtenir una adreça
 Indicar quines fases del procés DORA utilitzen Broadcast i quines Unicast en una xarxa local sense DHCP Relay.
 
 **Resposta:**
+ - Discover: Broadcast, perquè el client busca servidors DHCP disponibles.
+ - Offer: Broadcast o Unicast, segons les condicions de comunicació.
+ - Request: Broadcast, perquè el client comunica quin servidor ha seleccionat.
+ - Acknowledge: Broadcast o Unicast, segons les condicions de recepció del client
 
 ## 2.2 Ports i capçaleres DHCP
 
 DHCP utilitza el protocol UDP per comunicar el client amb el servidor.
 
-- Port UDP del client:
-- Port UDP del servidor:
+- Port UDP del client: 68
+- Port UDP del servidor: 67
 
 ### Identificació del client
 
 Indicar quin camp de la capçalera DHCP permet identificar la targeta de xarxa del client.
 
-**Resposta:**
+**Resposta:** El camp és chaddr (Client Hardware Address), que conté l'adreça MAC de la targeta de xarxa del client.
 
 
 ---
@@ -130,8 +134,8 @@ Afegir la configuració de la reserva dins de la secció corresponent de la subx
 
 Abans d'iniciar el servei, cal comprovar que el fitxer JSON no conté errors de sintaxi ni de configuració.
 
-- **Comanda o eina utilitzada:**
-- **Resultat de la validació:**
+- **Comanda o eina utilitzada:** sudo kea-dhcp4 -t /etc/kea/kea-dhcp4.conf
+- **Resultat de la validació:** Si la configuració és correcta, Kea indica que no s'han detectat errors i que el fitxer de configuració és vàlid.
 
 ### Evidència pràctica
 
@@ -151,22 +155,23 @@ Utilitzar les comandes de `systemctl` per gestionar el servei DHCP.
 
 | Acció | Comanda |
 |---|---|
-| Consultar l'estat | |
-| Reiniciar el servei | |
-| Aturar el servei | |
+| Consultar l'estat |sudo systemctl status kea-dhcp4-server |
+| Reiniciar el servei |sudo systemctl restart kea-dhcp4-server |
+| Aturar el servei |sudo systemctl stop kea-dhcp4-server |
+| Iniciar el servei |sudo systemctl start kea-dhcp4-server |
 
 ## 5.2 Consulta dels registres
 
 Els registres permeten consultar les peticions DHCP, detectar errors i comprovar el funcionament del servidor.
 
-- **Comanda amb `journalctl`:**
-- **Ruta dels registres:**
+- **Comanda amb `journalctl`:** sudo journalctl -u kea-dhcp4-server
+- **Ruta dels registres:** Els registres es consulten mitjançant el sistema journal de systemd amb l'eina journalctl. No tenen necessàriament un fitxer de text fix.
 
 ## 5.3 Fitxer de cessions DHCP
 
 Quan s'utilitza el sistema `memfile`, Kea guarda les cessions DHCP en un fitxer.
 
-- **Ruta del fitxer:**
+- **Ruta del fitxer:** /var/lib/kea/kea-leases4.csv
 - **Nom del fitxer:** `kea-leases4.csv`
 
 ## 5.4 Comprovacions des d'un client Linux
@@ -175,9 +180,9 @@ Utilitzar les comandes necessàries per alliberar l'adreça IP actual, sol·lici
 
 | Acció | Comanda |
 |---|---|
-| Alliberar IP | |
-| Sol·licitar una nova IP | |
-| Comprovar IP | |
+| Alliberar IP |sudo dhclient -r eth0 |
+| Sol·licitar una nova IP |sudo dhclient eth0 |
+| Comprovar IP |ip addr show eth0 |
 
 ## 5.5 Comprovacions des d'un client Windows
 
@@ -185,9 +190,9 @@ Utilitzar les comandes de `ipconfig` per renovar l'adreça IP del client.
 
 | Acció | Comanda |
 |---|---|
-| Alliberar IP | |
-| Sol·licitar una nova IP | |
-| Comprovar configuració | |
+| Alliberar IP |ipconfig /release |
+| Sol·licitar una nova IP |ipconfig /renew |
+| Comprovar configuració |ipconfig /all |
 
 ### Evidències pràctiques
 
