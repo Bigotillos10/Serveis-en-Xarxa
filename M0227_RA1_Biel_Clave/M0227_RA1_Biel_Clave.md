@@ -1,7 +1,7 @@
 # AA2 – Avaluació: Anàlisi Kea DHCP
 
 **Mòdul:** M0227 – Serveis de Xarxa  
-**Alumne:** Biel Clave 
+**Alumne:** Biel Clave   
 **Curs:** SMX2  
 **Empresa:** TechMataró SL  
 **Data:**  04/11/2026
@@ -46,21 +46,6 @@ Indicar quin camp de la capçalera DHCP permet identificar la targeta de xarxa d
 
 **Resposta:**
 
-## 2.3 Opcions DHCP
-
-Completar la informació de les opcions DHCP utilitzades per transmetre els paràmetres de xarxa.
-
-| Opció | Número |
-|---|---|
-| Router | |
-| DNS | |
-| Domain Name | |
-
-### Evidència pràctica
-
-Afegir una captura de Wireshark o tcpdump on es pugui observar el tràfic DHCP.
-
-**Captura:** 
 
 ---
 
@@ -87,8 +72,8 @@ La xarxa de l'empresa utilitza una subxarxa `192.168.x.0/24`.
 
 El servidor ha de permetre l'assignació dinàmica d'adreces IP dins del següent rang:
 
-- **Subxarxa:** `192.168.x.0/24`
-- **Pool dinàmic:** `192.168.x.50` – `192.168.x.200`
+- **Subxarxa:** `192.168.1.0/24`
+- **Pool dinàmic:** `192.168.1.50` – `192.168.1.200`
 
 ## 3.4 Opcions de xarxa
 
@@ -113,7 +98,11 @@ Redactar el fitxer JSON complet amb tots els paràmetres anteriors.
 
 Afegir una captura del fitxer de configuració obert a la terminal o editor.
 
-**Captura:**
+**Captura:** 
+
+![Captura1](/M0227_RA1_Biel_Clave/img/Captura%201.png)
+
+![Captura2](/M0227_RA1_Biel_Clave/img/Captura%202.png)
 
 ---
 
