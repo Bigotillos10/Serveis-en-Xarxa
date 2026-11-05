@@ -139,6 +139,8 @@ Afegir una captura de la terminal on es vegi la validació del fitxer.
 
 **Captura:**
 
+![captura2](/M0227_RA1_Biel_Clave/img/Captura%202.png)
+
 ---
 
 # 5. Bloc 4 – Comprovació, diagnòstic i resolució d'incidències
@@ -191,9 +193,13 @@ Utilitzar les comandes de `ipconfig` per renovar l'adreça IP del client.
 
 Afegir les captures reals de les proves efectuades.
 
-- Captura del servidor Linux:
-- Captura del client Linux:
-- Captura del client Windows:
+![Captura3](/M0227_RA1_Biel_Clave/img/Captura%203.png)
+
+![Captura4](/M0227_RA1_Biel_Clave/img/Captura%204.png)
+
+![Captura5](/M0227_RA1_Biel_Clave/img/Captura%205.png)
+
+![Captura6](/M0227_RA1_Biel_Clave/img/Captura%206.png)
 
 ---
 
@@ -229,16 +235,3 @@ En aquest apartat es farà una breu valoració personal de l'activitat.
 - Quina utilitat té DHCP en una empresa?
 
 ---
-
-# 8. Lliurament final
-
-Abans de lliurar el document, comprovar que inclou:
-
-- [ ] Configuració completa del servidor Kea DHCP4.
-- [ ] Configuració de la reserva MAC.
-- [ ] Validació de la sintaxi JSON.
-- [ ] Comandes de comprovació i diagnòstic.
-- [ ] Captures reals amb el nom d'usuari visible.
-- [ ] Mapa conceptual integrat al document.
-- [ ] Document exportat a PDF.
-
