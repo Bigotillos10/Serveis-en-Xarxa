@@ -231,7 +231,15 @@ El mapa ha de contenir els conceptes i les seves relacions, sense definicions ni
 En aquest apartat es farà una breu valoració personal de l'activitat.
 
 - Què he après sobre Kea DHCP?
+
+He apres molt sobre el Kea i a com configurar, encara que he petit molts errors
+
 - Quina part m'ha resultat més difícil?
+
+en el moment de posar ips i que tot quedes en un format perfecte
+
 - Quina utilitat té DHCP en una empresa?
+
+Per configurar xarxes desde la terminal i per asignar
 
 ---
