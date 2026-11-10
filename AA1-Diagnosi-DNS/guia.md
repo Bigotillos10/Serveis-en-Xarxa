@@ -472,6 +472,14 @@ Si la prova no funciona, pot ser per problemes de configuració de mDNS, del tal
 
 ---
 
+## Mapa conceptual del DNS
+
+A continuació es mostra un mapa conceptual que resumeix visualment el funcionament del servei DNS. Hi podem veure els seus elements principals, l'estructura jeràrquica, els tipus de registres, el procés de resolució de noms i el funcionament del mDNS.
+
+![Mapa conceptual del funcionament del DNS](/AA1-Diagnosi-DNS/img/Infografia%20visual%20sobre%20el%20sistema%20DNS.png)
+
+Aquest esquema permet entendre d'una manera més visual com treballa el DNS i com es relacionen els diferents elements que intervenen en la resolució dels noms de domini.
+
 # 7. CONCLUSIONS
 
 Amb aquesta activitat hem pogut conèixer millor el funcionament del servei DNS i la seva importància dins d'una xarxa informàtica.
