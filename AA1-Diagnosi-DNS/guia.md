@@ -503,23 +503,21 @@ He utilitzat la intel·ligència artificial com a eina de suport per:
 - Conèixer la funció de les diferents comandes de terminal.
 - Preparar les explicacions i l'anàlisi dels resultats.
 - Resoldre dubtes sobre com documentar les proves.
+- Fer l'estructura del video i el mapa conceptual.
 
 Les comandes, les proves pràctiques, les captures de pantalla i els resultats s'han d'obtenir i comprovar al meu propi entorn de treball.
 
-**Enllaç a la conversa amb la IA:** [AFEGIR ENLLAÇ COMPARTIT DE CHATGPT, SI ESTÀ DISPONIBLE]
+**Enllaç a la conversa amb la IA sobre el codi:** [https://chatgpt.com/share/6af358ac-8a54-83ed-9487-e54e528b061d]
+
+**Enllaç de la conversa sobre el mapa conceptual** [https://chatgpt.com/share/6af357f0-9fa8-83eb-9dac-3615b8e8a0be]
+
+**Enllaç de la conversa sobre el guio del video** [https://chatgpt.com/share/6af35942-5f8c-83eb-bd42-9e6c098d0f46]
 
 ### Altres eines utilitzades
 
 - **Terminal de Zorin OS:** Per executar les comandes i obtenir els resultats reals de les proves.
 - **Visual Studio Code:** Per crear i editar el document Markdown.
 - **GitHub:** Per guardar i visualitzar la documentació.
-
-### Fonts de consulta
-
-- Documentació de DNS (RFC 1034): https://www.rfc-editor.org/rfc/rfc1034
-- Documentació de DNS (RFC 1035): https://www.rfc-editor.org/rfc/rfc1035
-- Documentació de mDNS (RFC 6762): https://www.rfc-editor.org/rfc/rfc6762
-- Documentació de les eines Linux: https://man7.org/linux/man-pages/
 
 ---
 
